@@ -1,0 +1,9 @@
+[package]
+name = "butler_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+deno_ast = { version = "0.44.0", features = ["transpiling"] }
+deno_core = "0.327.0"
+tokio = { version = "1.42.0", features = ["full"] }
