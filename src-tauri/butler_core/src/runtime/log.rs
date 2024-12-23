@@ -5,7 +5,9 @@ fn op_log(#[string] msg: String) {
     println!("{msg}");
 }
 
-extension!(butler_log,
+extension!(
+    butler_log,
     ops = [op_log],
-    esm_entry_point = "ext:butler_log/log.js",
-    esm = [dir "./runtime", "log.js"],);
+    esm_entry_point = "butler::log",
+    esm = [dir "./runtime", "butler::log" = "log.js"],
+);

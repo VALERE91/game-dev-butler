@@ -4,14 +4,16 @@ function argsToMessage(...args) {
   return args.map((arg) => JSON.stringify(arg)).join(" ");
 }
 
-globalThis.butler_log = {
-  info: (...args) => {
+export class Logger {
+  static info(...args) {
     core.print(`[info]: ${argsToMessage(...args)}\n`, false);
-  },
-  error: (...args) => {
+  }
+
+  static error(...args) {
     core.print(`[err]: ${argsToMessage(...args)}\n`, true);
-  },
-  log: (msg) => {
+  }
+
+  static log(msg) {
     core.ops.op_log(msg);
-  },
-};
+  }
+}

@@ -9,7 +9,7 @@ pub fn run() {
         .enable_all()
         .build()
         .unwrap();
-    if let Err(error) = runtime.block_on(butler_core::run("./scripts/example.js")) {
+    if let Err(error) = runtime.block_on(butler_core::run("./scripts/example.ts")) {
         eprintln!("error: {}", error);
     }
 

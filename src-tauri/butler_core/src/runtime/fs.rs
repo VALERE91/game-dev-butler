@@ -18,5 +18,5 @@ fn op_remove_file(#[string] path: String) -> Result<(), AnyError> {
 
 extension!(butler_fs,
     ops = [op_read_file, op_write_file, op_remove_file,],
-    esm_entry_point = "ext:butler_fs/fs.js",
-    esm = [dir "./runtime", "fs.js"],);
+    esm_entry_point = "butler::fs",
+    esm = [dir "./runtime", "butler::fs" = "fs.js"],);

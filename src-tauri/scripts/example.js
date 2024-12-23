@@ -1,9 +1,9 @@
-butler_log.log("Hello from example.ts");
+Butler.log("Hello from example.ts");
 
 let content;
 try {
-  content = await butler_fs.readFile("./log.txt");
-  butler_log.log(content);
+  content = await Butler.readFile("./log.txt");
+  Butler.log(content);
 } catch (e) {
-  butler_log.log(e);
+  Butler.log(e);
 }

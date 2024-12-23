@@ -42,7 +42,10 @@ impl deno_core::ModuleLoader for TsModuleLoader {
                 | MediaType::Dcts
                 | MediaType::Tsx => (deno_core::ModuleType::JavaScript, true),
                 MediaType::Json => (deno_core::ModuleType::Json, false),
-                _ => panic!("Unknown extension {:?}", path.extension()),
+                _ => {
+                    println!("{}", path.as_path().display());
+                    panic!("Unknown extension {:?}", path.extension())
+                }
             };
 
             // Read the file, transpile if necessary.
