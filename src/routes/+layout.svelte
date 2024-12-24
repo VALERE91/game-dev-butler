@@ -1,4 +1,5 @@
 <script>
+    import "../app.postcss";
     let { children } = $props();
 
     import ThemeSwitch from "$lib/ThemeSwitch/ThemeSwitch.svelte";

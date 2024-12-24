@@ -1,3 +1,3 @@
-<div class="bg-white dark:bg-slate-800">
+<div>
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
 </div>
