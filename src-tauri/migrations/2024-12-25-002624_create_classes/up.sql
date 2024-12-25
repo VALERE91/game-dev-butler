@@ -1,0 +1,5 @@
+CREATE TABLE classes (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    group_id VARCHAR NOT NULL
+)

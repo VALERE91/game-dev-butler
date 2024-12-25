@@ -30,6 +30,13 @@ tower-http = { version = "0.6", features = ["full"] }
 tracing = "0.1"
 tracing-subscriber = "0.3"
 butler_core = { path = "./butler_core" }
+diesel = { version = "2.2.0", features = [
+    "sqlite",
+    "returning_clauses_for_sqlite_3_35",
+] }
+diesel_migrations = "2.2"
+deadpool-diesel = { version = "0.6", features = ["sqlite"] }
+dotenvy = "0.15"
 
 [workspace]
 members = ["butler_core"]

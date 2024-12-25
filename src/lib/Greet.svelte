@@ -13,7 +13,7 @@
     <label class="label">
         <span>Enter your name</span>
         <input
-            id="gree-input"
+            id="greet-input"
             placeholder="Enter a name..."
             bind:value={name}
             class="input"

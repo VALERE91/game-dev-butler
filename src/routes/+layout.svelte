@@ -2,7 +2,7 @@
     import "../app.postcss";
     let { children } = $props();
 
-    import ThemeSwitch from "$lib/ThemeSwitch/ThemeSwitch.svelte";
+    import ThemeSwitch from "$lib/ThemeSwitch.svelte";
 
     import { afterNavigate } from "$app/navigation";
     afterNavigate(() => {

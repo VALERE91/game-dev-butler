@@ -2,6 +2,9 @@ use tauri::Manager;
 use tokio::task;
 use tracing::info;
 
+mod db;
+mod models;
+mod schema;
 mod server;
 
 #[tauri::command]
@@ -13,7 +16,7 @@ fn greet(name: &str) -> String {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub async fn run() {
     let http_server_join = task::spawn(async {
-        server::run().await;
+        server::run().await.unwrap();
     });
 
     tauri::Builder::default()
