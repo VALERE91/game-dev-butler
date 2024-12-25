@@ -5,5 +5,6 @@ diesel::table! {
         id -> Integer,
         name -> Text,
         group_id -> Text,
+        code -> Text,
     }
 }

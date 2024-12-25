@@ -13,6 +13,7 @@ use crate::{models::class::Class, server::internal_error};
 pub struct CreateClass {
     pub name: String,
     pub group: String,
+    pub code: String,
 }
 
 pub fn router() -> Router<deadpool_diesel::sqlite::Pool> {
@@ -44,6 +45,7 @@ async fn add_class(
     let conn = pool.get().await.unwrap();
     let class = Class {
         id: 0,
+        code: payload.code.clone(),
         name: payload.name.clone(),
         group: payload.group.clone(),
     };
