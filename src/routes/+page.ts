@@ -1,7 +1,8 @@
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({ params }) => {
-  let response = await fetch("http://localhost:3000/classes");
+export const load: PageLoad = async ({ parent }) => {
+  const parentData = await parent();
+  let response = await fetch(`http://${parentData.api_url}/classes`);
   return {
     post: await response.text(),
   };
