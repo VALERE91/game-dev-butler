@@ -14,6 +14,7 @@ pub struct CreateClass {
     pub name: String,
     pub group: String,
     pub code: String,
+    pub session_id: i32,
 }
 
 pub fn router() -> Router<deadpool_diesel::sqlite::Pool> {
@@ -48,6 +49,7 @@ async fn add_class(
         code: payload.code.clone(),
         name: payload.name.clone(),
         group: payload.group.clone(),
+        session_id: payload.session_id,
     };
 
     let results = conn
