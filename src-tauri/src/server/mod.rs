@@ -20,7 +20,7 @@ where
     (StatusCode::INTERNAL_SERVER_ERROR, err.to_string())
 }
 
-pub async fn run() -> anyhow::Result<()> {
+pub async fn run(endpoint: &str) -> anyhow::Result<()> {
     let pool = db::establish_connection().await?;
 
     let cors = CorsLayer::new()
@@ -43,9 +43,7 @@ pub async fn run() -> anyhow::Result<()> {
         .layer(cors)
         .with_state(pool);
 
-    let listener = tokio::net::TcpListener::bind("localhost:3000")
-        .await
-        .unwrap();
+    let listener = tokio::net::TcpListener::bind(endpoint).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 
     Ok(())
